@@ -1,54 +1,57 @@
 package menu;
 
-import java.lang.ModuleLayer.Controller;
-
 import menu.guides.CustomerMenu;
 import menu.guides.EmployeeMenu;
+import menu.guides.MenuController;
 
 public class MainMenu
 {
-    public void start()
+    public static void start()
     {
         printRules();
+        // chooseUser();
         
         
     }
 
-    public void printRules() 
+    public static void printRules() 
     {
         System.out.println("Welcome to \"????????????\" Agency!");
-        Controller.delayMessages();
-        Controller.delayMessages();
+        MenuController.delayMessage();
         System.out.println("Choose by typing the number next to the option");
+        System.out.println("You cannot go back to the main menu");
+        System.out.println("Choose by typing the number next to the option");
+        System.out.println("Choose by typing the number next to the option");
+        System.out.println("Choose by typing the number next to the option");
+        System.out.println("Choose by typing the number next to the option");
+        MenuController.delayMessage();
     }
 
-    public void chooseUser()
-    {
-        printRules();
+    // public static int chooseUser()
+    // {
+    //     System.out.println("1. Customer");
+    //     System.out.println("2. Employee");
 
-        System.out.println("1. Customer");
-        System.out.println("2. Employee");
+    //     MenuController.delayMessage();
+    //     MenuController.clearScreen();
 
-        Controller.chooseOption();
-        Controller.clearScreen();
-
-        if (Console.chooseOption() == 1)
-        {
+    //     if (MenuController.chooseOption() == 1)
+    //     {
 
 
-        }
-        else
-        {
-            EmployeeMenu.login();
-            switch ()
-            {
-                case (1): EmployeeMenu.b();
+    //     }
+    //     else
+    //     {
+    //         EmployeeMenu.login();
+    //         // switch ()
+    //         // {
+    //         //     case (1): EmployeeMenu.b();
                         
-                case (2) : EmployeeMenu.c();
-                case (3) : EmployeeMenu.d();
+    //         //     case (2) : EmployeeMenu.c();
+    //         //     case (3) : EmployeeMenu.d();
 
-            }
-        }
+    //         // }
+    //     }
 
-    }
+    // }
 }

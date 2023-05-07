@@ -7,10 +7,18 @@ public class CustomerMenu /*implements CustomerOptions*/
         System.out.println("01. Rent");
         System.out.println("02. Buy");
         System.out.println();
-        System.out.println("0. Back");
 
-        Controller.chooseOption();
-        Controller.clearScreen();
+        MenuController.chooseOption();
+        MenuController.clearScreen();
+    }
+
+    public void dateOfRental() {
+        System.out.println("01. Start Date:");
+        System.out.println("02. End Date: ");
+        System.out.println();
+
+        MenuController.chooseOption();
+        MenuController.clearScreen();
     }
 
     public void userData() 
@@ -29,8 +37,8 @@ public class CustomerMenu /*implements CustomerOptions*/
         System.out.println();
         System.out.println("0. Back");
 
-        Controller.chooseOption();
-        Controller.clearScreen();
+        MenuController.chooseOption();
+        MenuController.clearScreen();
     }
 
     public void paymentMethod() 
@@ -42,8 +50,8 @@ public class CustomerMenu /*implements CustomerOptions*/
         System.out.println();
         System.out.println("0. Back");
 
-        Controller.chooseOption();
-        Controller.clearScreen();
+        MenuController.chooseOption();
+        MenuController.clearScreen();
     }
 
     public void visa()
@@ -60,7 +68,7 @@ public class CustomerMenu /*implements CustomerOptions*/
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
         
         System.out.println();
-        Controller.delay();
+        MenuController.delayMessage();
         
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
         System.out.println("┃                                     ┃");
@@ -73,10 +81,10 @@ public class CustomerMenu /*implements CustomerOptions*/
         System.out.println("┃                             VISA    ┃");
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 
-        Controller.delay();
+        MenuController.delayMessage();
         System.out.println();
         System.out.println("CARD NUMBER");
-        Console.chooseOption();
+        MenuController.chooseOption();
         System.out.println();
 
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
@@ -90,10 +98,10 @@ public class CustomerMenu /*implements CustomerOptions*/
         System.out.println("┃                             VISA    ┃");
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 
-        Controller.delay();
+        MenuController.delayMessage();
         System.out.println();
         System.out.println("EXPIRY DATE");
-        Console.chooseOption();
+        MenuController.chooseOption();
         System.out.println();
 
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
@@ -108,12 +116,12 @@ public class CustomerMenu /*implements CustomerOptions*/
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
         System.out.println();
 
-        Controller.delay();
+        MenuController.delayMessage();
         System.out.println();
         System.out.println("CVV");
-        Console.chooseOption();
 
-        Controller.clearScreen();
+        MenuController.chooseOption();
+        MenuController.clearScreen();
     }
 
     public void Installment() 
@@ -124,18 +132,17 @@ public class CustomerMenu /*implements CustomerOptions*/
         System.out.println();
         System.out.println("0. Back");
 
-        Controller.chooseOption();
-        Controller.clearScreen();
+        MenuController.chooseOption();
+        MenuController.clearScreen();
     }
 
     public void cash() 
     {
         System.out.println("Cash");
         System.out.println();
-        System.out.println();
         System.out.println("0. Back");
 
-        Controller.chooseOption();
-        Controller.clearScreen();
+        MenuController.chooseOption();
+        MenuController.clearScreen();
     }
 }

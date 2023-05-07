@@ -1,8 +1,7 @@
 package menu.guides;
 
-import human.Employee;
-import human.ScannerUtil;
 import human.Storage;
+import human.ScannerUtil;
 
 public class EmployeeMenu /* implements EmployeeOptions */
 {
@@ -11,10 +10,10 @@ public class EmployeeMenu /* implements EmployeeOptions */
     public static void login() 
     {
         ScannerUtil.takeString("Username", "null", "Admin");
-        Controller.clearScreen();
+        MenuController.clearScreen();
         
         ScannerUtil.takeString("Username", "null", "Admin");
-        Controller.clearScreen();
+        MenuController.clearScreen();
     }
 
     public static int a() 
@@ -23,8 +22,8 @@ public class EmployeeMenu /* implements EmployeeOptions */
         System.out.println("2. Add/Remove Car");
         System.out.println("3. Reset Password");
 
-        option = Controller.chooseOption();
-        Controller.clearScreen();
+        option = MenuController.chooseOption();
+        MenuController.clearScreen();
         return option;
     }
 
@@ -36,8 +35,8 @@ public class EmployeeMenu /* implements EmployeeOptions */
         System.out.println();
         System.out.println("0. Back");
 
-        option = Controller.chooseOption();
-        Controller.clearScreen();
+        option = MenuController.chooseOption();
+        MenuController.clearScreen();
         return option;
     }
 
@@ -48,13 +47,14 @@ public class EmployeeMenu /* implements EmployeeOptions */
         System.out.println();
         System.out.println("0. Back");
 
-        option = Controller.chooseOption();
-        Controller.clearScreen();
+        option = MenuController.chooseOption();
+        MenuController.clearScreen();
         return option;
     }
 
     public static void d()
     {
-        // Storage.admin.takeString("Password");
+        Storage.admin.resetPassword(ScannerUtil.takeString("New Password", null, Storage.admin.getPassword()));
+        Storage.admin.showData();
     }
 }

@@ -8,8 +8,8 @@ public class CarMenu
         System.out.println();
         System.out.println("0. Back");
 
-        Controller.chooseOption();
-        Controller.clearScreen();
+        MenuController.chooseOption();
+        MenuController.clearScreen();
     }
 
     public void carBodyType()
@@ -26,8 +26,8 @@ public class CarMenu
         System.out.println();
         System.out.println("0. Back");
 
-        Controller.chooseOption();
-        Controller.clearScreen();
+        MenuController.chooseOption();
+        MenuController.clearScreen();
     }
 
     public void fuelType()
@@ -40,8 +40,8 @@ public class CarMenu
         System.out.println();
         System.out.println("0. Back");
 
-        Controller.chooseOption();
-        Controller.clearScreen();
+        MenuController.chooseOption();
+        MenuController.clearScreen();
     }
 
     public void automaticOrManual() 
@@ -52,8 +52,8 @@ public class CarMenu
         System.out.println();
         System.out.println("0. Back");
 
-        Controller.chooseOption();
-        Controller.clearScreen();
+        MenuController.chooseOption();
+        MenuController.clearScreen();
     }
 
     public void color() 
@@ -73,8 +73,8 @@ public class CarMenu
         System.out.println();
         System.out.println("0. Back");
 
-        Controller.chooseOption();
-        Controller.clearScreen();
+        MenuController.chooseOption();
+        MenuController.clearScreen();
     }
 
     public void numberOfSeats() 
@@ -83,8 +83,8 @@ public class CarMenu
         System.out.println();
         System.out.println("0. Back");
 
-        Controller.chooseOption();
-        Controller.clearScreen();
+        MenuController.chooseOption();
+        MenuController.clearScreen();
     }
 
 }

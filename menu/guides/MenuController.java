@@ -3,7 +3,7 @@ package menu.guides;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class Controller
+public class MenuController
 {
     // Attributes
     private int option;
@@ -67,7 +67,7 @@ public class Controller
         System.out.flush();
     }
 
-    public static void delayMessages() 
+    public static void delayMessage() 
     {
         try 
         {
