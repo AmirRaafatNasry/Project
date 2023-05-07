@@ -1,48 +1,40 @@
 package menu.guides;
 
-public abstract class CustomerMenu 
+public class CustomerMenu /*implements CustomerOptions*/
 {
     public void rentOrBuy() 
     {
-        optionLevel = 01;
-
         System.out.println("01. Rent");
         System.out.println("02. Buy");
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void price() 
     {
-        optionLevel = 2;
-
         System.out.println(" Maximum Price");
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void disabled() 
     {
-        optionLevel = 2;
-
         System.out.println("Car for disabled?");
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void carBodyType()
     {
-        optionLevel = 2;
-
         System.out.println("Available Body Types");
         System.out.println("01. Hatchback");
         System.out.println("02. Muscle");
@@ -55,14 +47,12 @@ public abstract class CustomerMenu
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void fuelType()
     {
-        optionLevel = 2;
-
         System.out.println("Fuel Type");
         System.out.println("01. Electric");
         System.out.println("02. Gasoline");
@@ -71,52 +61,44 @@ public abstract class CustomerMenu
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void automaticOrManual() 
     {
-        optionLevel = 2;
-
         System.out.println("Transmission Type");
         System.out.println("01. Automatic");
         System.out.println("02. Manual");
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void numberOfSeats() 
     {
-        optionLevel = 2;
-
         System.out.println("Number of Seats");
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void year() 
     {
-        optionLevel = 2;
-
         System.out.println("Year");
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void color() 
     {
-        optionLevel = 2;
-
         System.out.println("Color");
         System.out.println("01. Black");
         System.out.println("02. White");
@@ -132,40 +114,34 @@ public abstract class CustomerMenu
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void condition() 
     {
-        optionLevel = 2;
-
         System.out.println("Condition");
         System.out.println("01. Zero");
         System.out.println("02. Used");
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void kilometers() 
     {
-        optionLevel = 2;
-
         System.out.println("Kilometers");
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void userData() 
     {
-        optionLevel = 2;
-
         System.out.println("Email");
         System.out.println();
         System.out.println("Username");
@@ -180,14 +156,12 @@ public abstract class CustomerMenu
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void paymentMethod() 
     {
-        optionLevel = 2;
-
         System.out.println("Payment methods:");
         System.out.println("01. Cash");
         System.out.println("02. Visa");
@@ -195,14 +169,12 @@ public abstract class CustomerMenu
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void visa()
     {
-        optionLevel = 2;
-
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
         System.out.println("┃                                     ┃");
         System.out.println("┃ CARD NUMBER                         ┃");
@@ -213,7 +185,42 @@ public abstract class CustomerMenu
         System.out.println("┃                                     ┃");
         System.out.println("┃                             VISA    ┃");
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+        
+        System.out.println();
+        Controller.delay();
+        
+        System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+        System.out.println("┃                                     ┃");
+        System.out.println("┃ CARD NUMBER                         ┃");
+        System.out.println("┃ XXXX  XXXX  XXXX  XXXX              ┃");
+        System.out.println("┃                                     ┃");
+        System.out.println("┃                                     ┃");
+        System.out.println("┃                                     ┃");
+        System.out.println("┃                                     ┃");
+        System.out.println("┃                             VISA    ┃");
+        System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 
+        Controller.delay();
+        System.out.println();
+        System.out.println("CARD NUMBER");
+        Console.chooseOption();
+        System.out.println();
+
+        System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+        System.out.println("┃                                     ┃");
+        System.out.println("┃                                     ┃");
+        System.out.println("┃                                     ┃");
+        System.out.println("┃                                     ┃");
+        System.out.println("┃ EXPIRY DATE                         ┃");
+        System.out.println("┃ MM/YY                               ┃");
+        System.out.println("┃                                     ┃");
+        System.out.println("┃                             VISA    ┃");
+        System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+
+        Controller.delay();
+        System.out.println();
+        System.out.println("EXPIRY DATE");
+        Console.chooseOption();
         System.out.println();
 
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
@@ -228,40 +235,34 @@ public abstract class CustomerMenu
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
         System.out.println();
 
-        System.out.println("CARD NUMBER");
-
-        System.out.println("EXPIRY DATE");
-
+        Controller.delay();
+        System.out.println();
         System.out.println("CVV");
+        Console.chooseOption();
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.clearScreen();
     }
 
     public void Installment() 
     {
-        optionLevel = 2;
-
         System.out.println("Installment");
         System.out.println("01. 12 Months");
         System.out.println("02. 24 Months");
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 
     public void cash() 
     {
-        optionLevel = 2;
-
         System.out.println("Cash");
         System.out.println();
         System.out.println();
         System.out.println("0. Back");
 
-        Functions.chooseOption();
-        Functions.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
     }
 }

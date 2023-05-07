@@ -1,11 +1,13 @@
 package human;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Employee extends Human
 {
+    Scanner input = new Scanner(System.in);
     // Attributes
     private final String username = "Admin";
-    private static String password = "Admin";
+    private static String password = "Admin01";
 
     // Constructor
     public Employee()
@@ -57,14 +59,73 @@ public class Employee extends Human
     {
     }
 
-    // Password
-    // Reset
+    // Take data
+    public void takeUsername()
+    {
+        while (true)
+        {
+            try
+            {
+                System.out.println("Username");
+                String username = input.next();
+
+                if (checkUsername(username))
+                    break;
+                else
+                    System.out.println("Invalid username.");
+            }
+                catch (InputMismatchException exception)
+                {
+                    System.out.println("Wrong entry!");
+                    System.out.println();
+                    System.out.println("Username : 1) English.");
+                    System.out.println("           2) Letters.");
+                }
+        }
+    }
+
+    public void takePassword()
+    {
+        while (true) 
+        {
+            try 
+            {
+                System.out.println("Password");
+                String password = input.next();
+
+                if (checkPassword(password))
+                    break;
+                else
+                    System.out.println("Invalid password.");
+            } 
+            catch (InputMismatchException exception) 
+            {
+                System.out.println("Wrong entry!");
+                System.out.println();
+                System.out.println("Password  English.");
+                System.out.println("           2) Letters.");
+                System.out.println("           3) Numbers.");
+            }
+        }
+    }
+
+    // Check
+    public boolean checkPassword(String password) 
+    {
+        return (getPassword() == password);
+    }
+
+    public boolean checkUsername(String username) 
+    {
+        return (getUsername() == username);
+    }
+
+    // Reset Password
     public String resetPassword(String newPassword)
     {
         while (true)
         {
             System.out.println("Password");
-            Scanner input = new Scanner(System.in);
             newPassword = input.next();
 
             if (checkPassword(newPassword))
@@ -74,9 +135,10 @@ public class Employee extends Human
         }
     }
 
-    // Check
-    public boolean checkPassword(String password) 
+    // Show Data
+    public void showData()
     {
-        return (getPassword() == password);
+        System.out.println("Username " + getUsername());
+        System.out.println("Password " + getPassword());
     }
 }

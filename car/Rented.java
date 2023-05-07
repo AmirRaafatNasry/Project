@@ -13,4 +13,7 @@ public class Rented extends Car
     
     // Methods
     public void calculateRentalPrice()
+    {
+        
+    }
 }

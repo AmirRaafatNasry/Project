@@ -3,11 +3,10 @@ package menu.guides;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class Console
+public class Controller
 {
     // Attributes
     private int option;
-    public static int optionLevel;
 
     // Getters (Accessors) & Setters (Mutators)
     public int getOption() 
@@ -40,7 +39,8 @@ public class Console
     public static String takeText(String text) 
     {
         // need to check
-        while (true) {
+        while (true) 
+        {
             try {
 
                 Scanner input = new Scanner(System.in);
@@ -65,11 +65,6 @@ public class Console
         System.out.flush();
     }
 
-    public static int goBack() 
-    {
-        return (optionLevel - 1);
-    }
-
     public static void delayMessages() 
     {
         try {
@@ -78,5 +73,4 @@ public class Console
             Thread.currentThread().interrupt();
         }
     }
-
 }

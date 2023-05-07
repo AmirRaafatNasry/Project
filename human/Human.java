@@ -74,5 +74,5 @@ public class Human
 
 
     // Methods
-
+    // get data
 }

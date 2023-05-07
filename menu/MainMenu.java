@@ -1,9 +1,10 @@
 package menu;
 
+import menu.guides.Console;
 import menu.guides.CustomerMenu;
 import menu.guides.EmployeeMenu;
 
-public class MainMenu extends EmployeeMenu, CustomerMenu
+public class MainMenu
 {
     public void start()
     {
@@ -15,20 +16,30 @@ public class MainMenu extends EmployeeMenu, CustomerMenu
     public void printRules() 
     {
         System.out.println("Welcome to \"????????????\" Agency!");
-        delay();
+        Console.delayMessages();
+        Console.delayMessages();
         System.out.println("Choose by typing the number next to the option");
     }
 
     public void chooseUser()
     {
-        optionLevel = 1;
+        printRules();
 
         System.out.println("1. Customer");
         System.out.println("2. Employee");
-        System.out.println();
-        System.out.println("0. Back");
 
-        chooseOption();
-        clearScreen();
+        Console.chooseOption();
+        Console.clearScreen();
+
+        if (Console.chooseOption() == 1)
+        {
+
+
+        }
+        else
+        {
+            EmployeeMenu.takeData();
+        }
+
     }
 }
