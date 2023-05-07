@@ -5,17 +5,49 @@ import java.util.Scanner;
 
 public class ScannerUtil 
 {
-    static Scanner input = new Scanner(System.in);
+    public static Scanner input = new Scanner(System.in);
 
-    public static void takeString()
+    public static String takeString(String label, String hint, String expected) 
     {
-        String text = input.next();
+        while (true) 
+        {
+            try 
+            {
+                System.out.println(label);
+                String text = input.next();
+
+                if (text == expected)
+                    return text;
+                else
+                    System.out.println("Invalid " + label.toLowerCase() + ".");
+            } 
+            catch (InputMismatchException exception) 
+            {
+                System.out.println(hint);
+                input.next();
+            }
+        }
     }
 
-    public static void takeInteger()
+    public static int takeInteger(String label, String hint, int expected) 
     {
-        String number = input.next();
+        while (true) 
+        {
+            try 
+            {
+                System.out.println(label);
+                int number = input.nextInt();
+
+                if (number == expected)
+                    return number;
+                else
+                    System.out.println("Invalid " + label.toLowerCase() + ".");
+            }
+            catch (InputMismatchException exception) 
+            {
+                System.out.println(hint);
+                input.next();
+            }
+        }
     }
-
-
 }

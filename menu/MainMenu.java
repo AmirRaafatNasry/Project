@@ -1,6 +1,7 @@
 package menu;
 
-import menu.guides.Console;
+import java.lang.ModuleLayer.Controller;
+
 import menu.guides.CustomerMenu;
 import menu.guides.EmployeeMenu;
 
@@ -16,8 +17,8 @@ public class MainMenu
     public void printRules() 
     {
         System.out.println("Welcome to \"????????????\" Agency!");
-        Console.delayMessages();
-        Console.delayMessages();
+        Controller.delayMessages();
+        Controller.delayMessages();
         System.out.println("Choose by typing the number next to the option");
     }
 
@@ -28,8 +29,8 @@ public class MainMenu
         System.out.println("1. Customer");
         System.out.println("2. Employee");
 
-        Console.chooseOption();
-        Console.clearScreen();
+        Controller.chooseOption();
+        Controller.clearScreen();
 
         if (Console.chooseOption() == 1)
         {
@@ -38,7 +39,15 @@ public class MainMenu
         }
         else
         {
-            EmployeeMenu.takeData();
+            EmployeeMenu.login();
+            switch ()
+            {
+                case (1): EmployeeMenu.b();
+                        
+                case (2) : EmployeeMenu.c();
+                case (3) : EmployeeMenu.d();
+
+            }
         }
 
     }

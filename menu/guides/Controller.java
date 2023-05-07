@@ -24,28 +24,30 @@ public class Controller
         // need to check
         while (true) 
         {
-            try {
-
+            try 
+            {
                 Scanner input = new Scanner(System.in);
                 int option = input.nextInt();
                 return option;
 
-            } catch (InputMismatchException exception) {
+            } 
+            catch (InputMismatchException exception) 
+            {
                 System.out.println("Enter a number!");
             }
         }
     }
 
-    public static String takeText(String text) 
+    public static void takeText(String text) 
     {
         // need to check
         while (true) 
         {
-            try {
-
+            try 
+            {
                 Scanner input = new Scanner(System.in);
                 int option = input.nextInt();
-                return option;
+                // return option;
 
             } catch (InputMismatchException exception) {
                 System.out.println("Enter a number!");
@@ -67,9 +69,12 @@ public class Controller
 
     public static void delayMessages() 
     {
-        try {
+        try 
+        {
             Thread.sleep(1000);
-        } catch (InterruptedException exception) {
+        } 
+        catch (InterruptedException exception) 
+        {
             Thread.currentThread().interrupt();
         }
     }

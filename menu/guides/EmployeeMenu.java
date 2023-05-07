@@ -1,40 +1,34 @@
 package menu.guides;
 
 import human.Employee;
+import human.ScannerUtil;
+import human.Storage;
 
 public class EmployeeMenu /* implements EmployeeOptions */
 {
     private static int option;
 
-    public static int takeData() 
+    public static void login() 
     {
-        Employee.takeUsername();
-        
-        System.out.println();
-        System.out.println("Password");
-        Controller.takeText();
-        System.out.println();
-        System.out.println("0. Back");
-
-        option = Controller.chooseOption();
+        ScannerUtil.takeString("Username", "null", "Admin");
         Controller.clearScreen();
-        return option;
+        
+        ScannerUtil.takeString("Username", "null", "Admin");
+        Controller.clearScreen();
     }
 
-    public static int chooseEmployeeOptions() 
+    public static int a() 
     {
         System.out.println("1. Display");
         System.out.println("2. Add/Remove Car");
         System.out.println("3. Reset Password");
-        System.out.println();
-        System.out.println("0. Back");
 
         option = Controller.chooseOption();
         Controller.clearScreen();
         return option;
     }
 
-    public static int levelThreeA() 
+    public static int b() 
     {
         System.out.println("1. Display Customers");
         System.out.println("2. Display Rented Cars");
@@ -47,7 +41,7 @@ public class EmployeeMenu /* implements EmployeeOptions */
         return option;
     }
 
-    public static int levelThreeB() 
+    public static int c() 
     {
         System.out.println("1. Add Car");
         System.out.println("2. Remove Car");
@@ -59,8 +53,8 @@ public class EmployeeMenu /* implements EmployeeOptions */
         return option;
     }
 
-    public static void levelThreeC()
+    public static void d()
     {
-        // employee.resetPassword();
+        // Storage.admin.takeString("Password");
     }
 }

@@ -6,7 +6,7 @@ public class Customer extends Human
     private boolean isInsured;
     
     // Constructor
-    public Customer (String email, String username, String password, int phoneNumber, int nationalIdentificationNumber, int salary, boolean isInsured)
+    public Customer (String email, String username, String password, int phoneNumber, int nationalIdentificationNumber, boolean isInsured)
     {
         super(email, username, password, phoneNumber, nationalIdentificationNumber);
         this.isInsured = isInsured;

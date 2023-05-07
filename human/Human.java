@@ -74,5 +74,9 @@ public class Human
 
 
     // Methods
-    // get data
+    public void showData() 
+    {
+        System.out.println("Username " + getUsername());
+        System.out.println("Password " + getPassword());
+    }
 }

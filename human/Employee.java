@@ -29,13 +29,34 @@ public class Employee extends Human
         Employee.password = password;
     }
 
-    // Display
+    // Methods
     public void displayCustomers()
     {
+        if (Storage.customers.isEmpty())
+            System.out.println("No Customers");
+        else
+        {
+            for (Customer customer : Storage.customers)
+            {
+                System.out.println("Customer/s Data");
+                System.out.println("1. Email: " + customer.getEmail());
+                System.out.println("2. Username: " + customer.getUsername());
+                System.out.println("3. Password: " + customer.getPassword());
+                System.out.println();
+                System.out.println("4. Phone Number: " + customer.getPhoneNumber());
+                System.out.println("5. National Identification Number: " + customer.getNationalIdentificationNumber());
+                System.out.println("6. Insurance : " + customer.isInsured());
+
+                System.out.println();
+                System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+                System.out.println();
+            }
+        }
     }
 
     public void displayAvailableCars()
     {
+
     }
 
     public void displayRentedCars()
@@ -50,93 +71,56 @@ public class Employee extends Human
     {
     }
 
-    // Add & Remove
+
     public void addCar()
     {
-    }
+        boolean flag = true;
+        while (flag)
+        {
+            System.out.println("Disabled?");
+            System.out.println("Body Type: ");
+            System.out.println("Fuel Type: ");
+            System.out.println("Transmission Type: ");
+            System.out.println("Color: ");
+            System.out.println("Number of Seats: ");
+            System.out.println("");
 
+            // ?????????
+            System.out.println("Add another? [Y/N]");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+        }
+    }
     public void removeCar()
     {
     }
 
-    // Take data
-    public void takeUsername()
+    public String resetPassword(String newPassword) 
     {
-        while (true)
-        {
-            try
-            {
-                System.out.println("Username");
-                String username = input.next();
-
-                if (checkUsername(username))
-                    break;
-                else
-                    System.out.println("Invalid username.");
-            }
-                catch (InputMismatchException exception)
-                {
-                    System.out.println("Wrong entry!");
-                    System.out.println();
-                    System.out.println("Username : 1) English.");
-                    System.out.println("           2) Letters.");
-                }
-        }
-    }
-
-    public void takePassword()
-    {
-        while (true) 
+    while (true) 
         {
             try 
             {
                 System.out.println("Password");
-                String password = input.next();
+                newPassword = input.next();
 
-                if (checkPassword(password))
-                    break;
-                else
+                if (newPassword == password)
                     System.out.println("Invalid password.");
+                else
+                    return newPassword;
             } 
             catch (InputMismatchException exception) 
             {
-                System.out.println("Wrong entry!");
-                System.out.println();
-                System.out.println("Password  English.");
-                System.out.println("           2) Letters.");
-                System.out.println("           3) Numbers.");
+                // ?????????????????????
+                System.out.println("Password ");
+                input.next();
             }
         }
     }
 
-    // Check
-    public boolean checkPassword(String password) 
-    {
-        return (getPassword() == password);
-    }
-
-    public boolean checkUsername(String username) 
-    {
-        return (getUsername() == username);
-    }
-
-    // Reset Password
-    public String resetPassword(String newPassword)
-    {
-        while (true)
-        {
-            System.out.println("Password");
-            newPassword = input.next();
-
-            if (checkPassword(newPassword))
-                System.out.println("SAME PASSWORD!" + "\n" + "TRY AGAIN!" + "\n");
-            else
-                return newPassword;
-        }
-    }
-
-    // Show Data
-    public void showData()
+    // ??????????????
+    @Override // Annotation
+    public void showData() 
     {
         System.out.println("Username " + getUsername());
         System.out.println("Password " + getPassword());
