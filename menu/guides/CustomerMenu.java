@@ -1,31 +1,43 @@
 package menu.guides;
 
-public class CustomerMenu /*implements CustomerOptions*/
+import human.ScannerUtil;
+import human.Storage;
+
+public class CustomerMenu
 {
     public static void customerMenuStart()
     {
-        
+        while (true) 
+        {
+            CarMenu.carMenuStart();
+            switch (ScannerUtil.takeInteger(2, 1)) 
+            {
+                case (1):
+                    displayRentalOptions();
+                case(2):
+
+            }
+        }
     }
-    public void rentOrBuy() 
+
+    public static void displayLevelOne() 
     {
         System.out.println("01. Rent");
         System.out.println("02. Buy");
-        System.out.println();
 
-        MenuController.chooseOption();
         MenuController.clearScreen();
     }
 
-    public void dateOfRental() {
+    public static void displayRentalOptions() 
+    {
         System.out.println("01. Start Date:");
-        System.out.println("02. End Date: ");
+        System.out.println("02. End Date:");
         System.out.println();
 
-        MenuController.chooseOption();
         MenuController.clearScreen();
     }
 
-    public void userData() 
+    public static void displayDataFields() 
     {
         System.out.println("Email");
         System.out.println();
@@ -41,11 +53,10 @@ public class CustomerMenu /*implements CustomerOptions*/
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.chooseOption();
         MenuController.clearScreen();
     }
 
-    public void paymentMethod() 
+    public static void paymentMethod() 
     {
         System.out.println("Payment methods:");
         System.out.println("01. Cash");
@@ -54,11 +65,10 @@ public class CustomerMenu /*implements CustomerOptions*/
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.chooseOption();
         MenuController.clearScreen();
     }
 
-    public void visa()
+    public static void visa()
     {
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
         System.out.println("┃                                     ┃");
@@ -88,7 +98,8 @@ public class CustomerMenu /*implements CustomerOptions*/
         MenuController.delayMessage();
         System.out.println();
         System.out.println("CARD NUMBER");
-        MenuController.chooseOption();
+        // takes input
+
         System.out.println();
 
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
@@ -105,7 +116,8 @@ public class CustomerMenu /*implements CustomerOptions*/
         MenuController.delayMessage();
         System.out.println();
         System.out.println("EXPIRY DATE");
-        MenuController.chooseOption();
+        // takes input
+
         System.out.println();
 
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
@@ -123,12 +135,12 @@ public class CustomerMenu /*implements CustomerOptions*/
         MenuController.delayMessage();
         System.out.println();
         System.out.println("CVV");
+        // takes input
 
-        MenuController.chooseOption();
         MenuController.clearScreen();
     }
 
-    public void Installment() 
+    public static void Installment() 
     {
         System.out.println("Installment");
         System.out.println("01. 12 Months");
@@ -136,17 +148,15 @@ public class CustomerMenu /*implements CustomerOptions*/
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.chooseOption();
         MenuController.clearScreen();
     }
 
-    public void cash() 
+    public static void cash() 
     {
         System.out.println("Cash");
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.chooseOption();
         MenuController.clearScreen();
     }
 }

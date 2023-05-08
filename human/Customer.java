@@ -2,7 +2,7 @@ package human;
 
 public class Customer extends Human
 {
-    // Attribute
+    // Attribute 
     private boolean isInsured;
     
     // Constructor

@@ -5,8 +5,6 @@ import human.ScannerUtil;
 
 public class EmployeeMenu
 {
-    private static int option;
-
     public static void employeeMenuStart() 
     {
         while (true) 
@@ -58,10 +56,10 @@ public class EmployeeMenu
 
     public static void login() 
     {
-        ScannerUtil.takeString("Username", "", "Admin");
+        ScannerUtil.takeString("Username", "Username is an English word.", "Admin");
         MenuController.clearScreen();
 
-        ScannerUtil.takeString("Username", "null", "Admin");
+        ScannerUtil.takeString("Password", "Password is an English word with numbers.", "Admin01");
         MenuController.clearScreen();
     }
 

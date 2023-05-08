@@ -1,18 +1,50 @@
 package menu.guides;
 
+import human.ScannerUtil;
+import human.Storage;
+
 public class CarMenu 
 {
-    public void disabled() 
+    
+    public static void carMenuStart()
+    {
+        System.out.println("Car Specifications ");
+        MenuController.delayMessage();
+
+        while (true) 
+        {
+            askIfDisabled();
+            switch (ScannerUtil.takeInteger(2, 1)) 
+            {
+                case(0):
+                    askIfDisabled();
+                    break;
+                default:
+                    displayCarBodyType();
+                    switch (ScannerUtil.takeInteger(8, 1)) 
+                    {
+                        case (0):
+                            askIfDisabled();
+                            break;
+                        default:
+                            displayCarBodyType();
+
+                    }
+            }
+            }
+    }
+
+    public static void askIfDisabled() 
     {
         System.out.println("Car for disabled?");
         System.out.println();
-        System.out.println("0. Back");
+        // input????????
+        // 
 
-        MenuController.chooseOption();
         MenuController.clearScreen();
     }
 
-    public void carBodyType()
+    public static void displayCarBodyType()
     {
         System.out.println("Available Body Types");
         System.out.println("01. Hatchback");
@@ -25,12 +57,12 @@ public class CarMenu
         System.out.println("08. Van");
         System.out.println();
         System.out.println("0. Back");
+        
 
-        MenuController.chooseOption();
         MenuController.clearScreen();
     }
 
-    public void fuelType()
+    public static void displayFuelType()
     {
         System.out.println("Fuel Type");
         System.out.println("01. Electric");
@@ -40,11 +72,10 @@ public class CarMenu
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.chooseOption();
         MenuController.clearScreen();
     }
 
-    public void automaticOrManual() 
+    public static void displayAutomaticOrManual() 
     {
         System.out.println("Transmission Type");
         System.out.println("01. Automatic");
@@ -52,11 +83,10 @@ public class CarMenu
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.chooseOption();
         MenuController.clearScreen();
     }
 
-    public void color() 
+    public static void displayColor() 
     {
         System.out.println("Color");
         System.out.println("01. Black");
@@ -73,17 +103,16 @@ public class CarMenu
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.chooseOption();
         MenuController.clearScreen();
     }
 
-    public void numberOfSeats() 
+    public static void displayNumberOfSeats() 
     {
         System.out.println("Number of Seats");
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.chooseOption();
+
         MenuController.clearScreen();
     }
 
