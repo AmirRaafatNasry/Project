@@ -1,59 +1,10 @@
 package menu.guides;
 
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
 public class MenuController
 {
-    // Attributes
-    private int option;
-
-    // Getters (Accessors) & Setters (Mutators)
-    public int getOption() 
-    {
-        return option;
-    }
-    public void setOption(int option) 
-    {
-        this.option = option;
-    }
-
     // Methods
-    public static int chooseOption() 
-    {
-        while (true) 
-        {
-            try 
-            {
-                Scanner input = new Scanner(System.in);
-                int option = input.nextInt();
-                return option;
-
-            } 
-            catch (InputMismatchException exception) 
-            {
-                System.out.println("Enter a number!");
-            }
-        }
-    }
-
-    public static void takeText(String text) 
-    {
-        // need to check
-        while (true) 
-        {
-            try 
-            {
-                Scanner input = new Scanner(System.in);
-                int option = input.nextInt();
-                // return option;
-
-            } catch (InputMismatchException exception) {
-                System.out.println("Enter a number!");
-            }
-        }
-    }
-
     public static void clearScreen() 
     {
         // \033: It represents the ASCII escape character.

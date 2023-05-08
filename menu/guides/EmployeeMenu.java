@@ -3,67 +3,78 @@ package menu.guides;
 import human.Storage;
 import human.ScannerUtil;
 
-public class EmployeeMenu /* implements EmployeeOptions */
+public class EmployeeMenu
 {
     private static int option;
 
-    public static void employeeMenuStart()
+    public static void employeeMenuStart() 
     {
-        while (true)
+        while (true) 
         {
             login();
-            a();
-            switch (option)
+            displayOptions();
+
+            switch (ScannerUtil.takeInteger(2, 1)) 
             {
-                case (1): b(); // Display
-                        switch (option) 
-                        {
-                            case (1): Storage.admin.displayCustomers();
-                                break;
-                            case (2): Storage.admin.displayRentedCars();
-                                break;
-                            case (3): Storage.admin.displaySoldCars();
-                                break;
-                            case(0): a();
-                                break;
-                        }
-                        break;
-                case (2): c();
-                        switch(option)
-                        {
-                            case(1): Storage.admin.addCar();
+                case (1):
+                    displayLevelOne(); 
+                    switch (ScannerUtil.takeInteger(3, 0)) 
+                    {
+                        case (1):
+                            Storage.admin.displayCustomers();
                             break;
-                            case(2): Storage.admin.removeCar();
+                        case (2):
+                            Storage.admin.displayRentedCars();
                             break;
-                            case (0); a();
-                        }
-                case (3): d();
-                break;
+                        case (3):
+                            Storage.admin.displaySoldCars();
+                            break;
+                        case (0):
+                            displayOptions();
+                            break;
+                    }
+                    break;
+
+                case (2):
+                    displayLevelTwo();
+                    switch (ScannerUtil.takeInteger(2, 0)) 
+                    {
+                        case (1):
+                            Storage.admin.addCar();
+                            break;
+                        case (2):
+                            Storage.admin.removeCar();
+                            break;
+                        case (0):
+                            displayOptions();
+                    }
+
+                case (3):
+                    displayLevelThree();
+                    break;
             }
         }
     }
 
     public static void login() 
     {
-        ScannerUtil.takeString("Username", "null", "Admin");
+        ScannerUtil.takeString("Username", "", "Admin");
         MenuController.clearScreen();
-        
+
         ScannerUtil.takeString("Username", "null", "Admin");
         MenuController.clearScreen();
     }
 
-    public static int a() 
+    public static void displayOptions() 
     {
         System.out.println("1. Display");
         System.out.println("2. Add/Remove Car");
         System.out.println("3. Reset Password");
 
-        option = MenuController.chooseOption();
         MenuController.clearScreen();
-        return option;
     }
 
-    public static int b() 
+    public static void displayLevelOne() 
     {
         System.out.println("1. Display Customers");
         System.out.println("2. Display Rented Cars");
@@ -71,24 +82,20 @@ public class EmployeeMenu /* implements EmployeeOptions */
         System.out.println();
         System.out.println("0. Back");
 
-        option = MenuController.chooseOption();
         MenuController.clearScreen();
-        return option;
     }
 
-    public static int c() 
+    public static void displayLevelTwo() 
     {
         System.out.println("1. Add Car");
         System.out.println("2. Remove Car");
         System.out.println();
         System.out.println("0. Back");
 
-        option = MenuController.chooseOption();
         MenuController.clearScreen();
-        return option;
     }
 
-    public static void d()
+    public static void displayLevelThree() 
     {
         Storage.admin.resetPassword(ScannerUtil.takeString("New Password", null, Storage.admin.getPassword()));
         Storage.admin.showData();

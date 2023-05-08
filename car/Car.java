@@ -11,50 +11,57 @@ public class Car
     private int numberOfSeats;
 
     // Getters (Accessors) & Setters (Mutators)
-    public boolean isDisabled() {
+    public boolean isDisabled() 
+    {
         return disabled;
     }
-    public void setDisabled(boolean disabled) {
+    public void setDisabled(boolean disabled) 
+    {
         this.disabled = disabled;
     }
 
-    public String getBodyType() {
+    public String getBodyType() 
+    {
         return bodyType;
     }
-
-    public void setBodyType(String bodyType) {
+    public void setBodyType(String bodyType) 
+    {
         this.bodyType = bodyType;
     }
 
-    public String getFuelType() {
+    public String getFuelType() 
+    {
         return fuelType;
     }
-
-    public void setFuelType(String fuelType) {
+    public void setFuelType(String fuelType) 
+    {
         this.fuelType = fuelType;
     }
 
-    public String getTransmissionType() {
+    public String getTransmissionType() 
+    {
         return transmissionType;
     }
-
-    public void setTransmissionType(String transmissionType) {
+    public void setTransmissionType(String transmissionType) 
+    {
         this.transmissionType = transmissionType;
     }
 
-    public String getColor() {
+    public String getColor() 
+    {
         return color;
     }
-
-    public void setColor(String color) {
+    public void setColor(String color) 
+    {
         this.color = color;
     }
 
-    public int getNumberOfSeats() {
+    public int getNumberOfSeats() 
+    {
         return numberOfSeats;
     }
-
-    public void setNumberOfSeats(int numberOfSeats) {
+    public void setNumberOfSeats(int numberOfSeats) 
+    {
         this.numberOfSeats = numberOfSeats;
     }
 

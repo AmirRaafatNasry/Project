@@ -9,10 +9,9 @@ public class ScannerUtil
 
     public static String takeString(String label, String hint, String expected) 
     {
-        while (true) 
+        while (true)
         {
-            try 
-            {
+            try {
                 System.out.println(label);
                 String text = input.next();
 
@@ -20,9 +19,7 @@ public class ScannerUtil
                     return text;
                 else
                     System.out.println("Invalid " + label.toLowerCase() + ".");
-            } 
-            catch (InputMismatchException exception) 
-            {
+            } catch (InputMismatchException exception) {
                 System.out.println(hint);
                 input.next();
             }
@@ -42,10 +39,31 @@ public class ScannerUtil
                     return number;
                 else
                     System.out.println("Invalid " + label.toLowerCase() + ".");
-            }
+            } 
             catch (InputMismatchException exception) 
             {
                 System.out.println(hint);
+                input.next();
+            }
+        }
+    }
+
+    public static int takeInteger(int maximum, int minimum) 
+    {
+        while (true) 
+        {
+            try 
+            {
+                int number = input.nextInt();
+
+                if (number > maximum || number < minimum)
+                    System.out.println("Wrong Entry.");
+                else
+                    return number;
+            } 
+            catch (InputMismatchException exception) 
+            {
+                System.out.println("Expected an integer");
                 input.next();
             }
         }
