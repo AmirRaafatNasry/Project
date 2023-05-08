@@ -7,6 +7,42 @@ public class EmployeeMenu /* implements EmployeeOptions */
 {
     private static int option;
 
+    public static void employeeMenuStart()
+    {
+        while (true)
+        {
+            login();
+            a();
+            switch (option)
+            {
+                case (1): b(); // Display
+                        switch (option) 
+                        {
+                            case (1): Storage.admin.displayCustomers();
+                                break;
+                            case (2): Storage.admin.displayRentedCars();
+                                break;
+                            case (3): Storage.admin.displaySoldCars();
+                                break;
+                            case(0): a();
+                                break;
+                        }
+                        break;
+                case (2): c();
+                        switch(option)
+                        {
+                            case(1): Storage.admin.addCar();
+                            break;
+                            case(2): Storage.admin.removeCar();
+                            break;
+                            case (0); a();
+                        }
+                case (3): d();
+                break;
+            }
+        }
+    }
+
     public static void login() 
     {
         ScannerUtil.takeString("Username", "null", "Admin");

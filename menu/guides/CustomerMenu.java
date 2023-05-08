@@ -2,6 +2,10 @@ package menu.guides;
 
 public class CustomerMenu /*implements CustomerOptions*/
 {
+    public static void customerMenuStart()
+    {
+        
+    }
     public void rentOrBuy() 
     {
         System.out.println("01. Rent");

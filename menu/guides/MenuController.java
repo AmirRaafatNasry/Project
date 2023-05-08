@@ -21,7 +21,6 @@ public class MenuController
     // Methods
     public static int chooseOption() 
     {
-        // need to check
         while (true) 
         {
             try 

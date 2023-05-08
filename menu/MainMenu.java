@@ -6,7 +6,7 @@ import menu.guides.MenuController;
 
 public class MainMenu
 {
-    public static void start()
+    public static void mainMenuStart()
     {
         printRules();
         // chooseUser();
@@ -27,31 +27,20 @@ public class MainMenu
         MenuController.delayMessage();
     }
 
-    // public static int chooseUser()
-    // {
-    //     System.out.println("1. Customer");
-    //     System.out.println("2. Employee");
+    public static int chooseUser()
+    {
+        System.out.println("1. Customer");
+        System.out.println("2. Employee");
 
-    //     MenuController.delayMessage();
-    //     MenuController.clearScreen();
+        MenuController.delayMessage();
+        MenuController.clearScreen();
 
-    //     if (MenuController.chooseOption() == 1)
-    //     {
+        switch (MenuController.chooseOption())
+        {
+            case (1): CustomerMenu.customerMenuStart();
+                    break;
+            case (2): EmployeeMenu.employeeMenuStart();
+                    break;
+        }
 
-
-    //     }
-    //     else
-    //     {
-    //         EmployeeMenu.login();
-    //         // switch ()
-    //         // {
-    //         //     case (1): EmployeeMenu.b();
-                        
-    //         //     case (2) : EmployeeMenu.c();
-    //         //     case (3) : EmployeeMenu.d();
-
-    //         // }
-    //     }
-
-    // }
-}
+    }
