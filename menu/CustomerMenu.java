@@ -1,11 +1,11 @@
-package menu.guides;
+package menu;
 
-import human.ScannerUtil;
-import human.Storage;
+import utility.OutputUtil;
+import utility.ScannerUtil;
 
 public class CustomerMenu
 {
-    public static void customerMenuStart()
+    public static void start()
     {
         while (true) 
         {
@@ -25,7 +25,7 @@ public class CustomerMenu
         System.out.println("01. Rent");
         System.out.println("02. Buy");
 
-        MenuController.clearScreen();
+        OutputUtil.clearScreen();
     }
 
     public static void displayRentalOptions() 
@@ -34,7 +34,7 @@ public class CustomerMenu
         System.out.println("02. End Date:");
         System.out.println();
 
-        MenuController.clearScreen();
+        OutputUtil.clearScreen();
     }
 
     public static void displayDataFields() 
@@ -53,7 +53,7 @@ public class CustomerMenu
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.clearScreen();
+        OutputUtil.clearScreen();
     }
 
     public static void paymentMethod() 
@@ -65,7 +65,7 @@ public class CustomerMenu
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.clearScreen();
+        OutputUtil.clearScreen();
     }
 
     public static void visa()
@@ -82,7 +82,7 @@ public class CustomerMenu
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
         
         System.out.println();
-        MenuController.delayMessage();
+        OutputUtil.delayMessage();
         
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
         System.out.println("┃                                     ┃");
@@ -95,7 +95,7 @@ public class CustomerMenu
         System.out.println("┃                             VISA    ┃");
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 
-        MenuController.delayMessage();
+        OutputUtil.delayMessage();
         System.out.println();
         System.out.println("CARD NUMBER");
         // takes input
@@ -113,7 +113,7 @@ public class CustomerMenu
         System.out.println("┃                             VISA    ┃");
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 
-        MenuController.delayMessage();
+        OutputUtil.delayMessage();
         System.out.println();
         System.out.println("EXPIRY DATE");
         // takes input
@@ -132,12 +132,12 @@ public class CustomerMenu
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
         System.out.println();
 
-        MenuController.delayMessage();
+        OutputUtil.delayMessage();
         System.out.println();
         System.out.println("CVV");
         // takes input
 
-        MenuController.clearScreen();
+        OutputUtil.clearScreen();
     }
 
     public static void Installment() 
@@ -148,7 +148,7 @@ public class CustomerMenu
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.clearScreen();
+        OutputUtil.clearScreen();
     }
 
     public static void cash() 
@@ -157,6 +157,6 @@ public class CustomerMenu
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.clearScreen();
+        OutputUtil.clearScreen();
     }
 }

@@ -1,7 +1,7 @@
-package menu.guides;
+package menu;
 
-import human.ScannerUtil;
-import human.Storage;
+import utility.OutputUtil;
+import utility.ScannerUtil;
 
 public class CarMenu 
 {
@@ -9,7 +9,7 @@ public class CarMenu
     public static void carMenuStart()
     {
         System.out.println("Car Specifications ");
-        MenuController.delayMessage();
+        OutputUtil.delayMessage();
 
         while (true) 
         {
@@ -41,7 +41,7 @@ public class CarMenu
         // input????????
         // 
 
-        MenuController.clearScreen();
+        OutputUtil.clearScreen();
     }
 
     public static void displayCarBodyType()
@@ -59,7 +59,7 @@ public class CarMenu
         System.out.println("0. Back");
         
 
-        MenuController.clearScreen();
+        OutputUtil.clearScreen();
     }
 
     public static void displayFuelType()
@@ -72,7 +72,7 @@ public class CarMenu
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.clearScreen();
+        OutputUtil.clearScreen();
     }
 
     public static void displayAutomaticOrManual() 
@@ -83,7 +83,7 @@ public class CarMenu
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.clearScreen();
+        OutputUtil.clearScreen();
     }
 
     public static void displayColor() 
@@ -103,7 +103,7 @@ public class CarMenu
         System.out.println();
         System.out.println("0. Back");
 
-        MenuController.clearScreen();
+        OutputUtil.clearScreen();
     }
 
     public static void displayNumberOfSeats() 
@@ -113,7 +113,7 @@ public class CarMenu
         System.out.println("0. Back");
 
 
-        MenuController.clearScreen();
+        OutputUtil.clearScreen();
     }
 
 }

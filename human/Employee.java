@@ -1,61 +1,33 @@
 package human;
-import java.util.Scanner;
-
 
 import car.Car;
 import car.Rented;
 import car.Sold;
+import storage.Storage;
+import utility.ScannerUtil;
 
-import java.util.InputMismatchException;
-
-public class Employee extends Human
-{
-    Scanner input = new Scanner(System.in);
-    // Attributes
-    private final String username = "Admin";
-    private static String password = "Admin01";
-
+public class Employee extends Human {
     // Constructor
-    public Employee()
-    {
-        super();
-    }
-
-    // Getters (Accessors) & Setters (Mutators)
-    public String getUsername() 
-    {
-        return username;
-    }
-    public String getPassword() 
-    {
-        return password;
-    }
-    public void setPassword(String password) 
-    {
-        Employee.password = password;
+    public Employee(String email, String username, String password, String phoneNumber) {
+        super(email, username, password, phoneNumber);
     }
 
     // Methods
-    public void displayCustomers()
-    {
+    public void displayCustomers() {
         if (Storage.customers.isEmpty())
             System.out.println("No Customers!");
-        else
-        {
+        else {
             System.out.println("Customer/s Data");
             int totalNumber = 1;
-            for (Customer customer : Storage.customers)
-            {
+            for (Customer customer : Storage.customers) {
                 System.out.println("━ " + totalNumber + " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
                 System.out.println();
 
                 System.out.println("1. Email: " + customer.getEmail());
                 System.out.println("2. Username: " + customer.getUsername());
                 System.out.println("3. Password: " + customer.getPassword());
-                System.out.println();
                 System.out.println("4. Phone Number: " + customer.getPhoneNumber());
                 System.out.println("5. National Identification Number: " + customer.getNationalIdentificationNumber());
-                System.out.println("6. Insurance : " + customer.isInsured());
 
                 System.out.println();
                 System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
@@ -65,18 +37,16 @@ public class Employee extends Human
         }
     }
 
-    // public Car(boolean disabled, String bodyType, String fuelType, String transmissionType, String color, int numberOfSeats)
+    // public Car(boolean disabled, String bodyType, String fuelType, String
+    // transmissionType, String color, int numberOfSeats)
 
-    public void displayAvailableCars()
-    {
+    public void displayAvailableCars() {
         if (Storage.availableCars.isEmpty())
             System.out.println("No Available Cars!");
-        else 
-        {
+        else {
             System.out.println("Available Car/s Data");
             int totalNumber = 1;
-            for (Car availableCar : Storage.availableCars) 
-            {
+            for (Car availableCar : Storage.availableCars) {
                 System.out.println("━ " + totalNumber + " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
                 System.out.println();
 
@@ -95,16 +65,13 @@ public class Employee extends Human
         }
     }
 
-    public void displayRentedCars()
-    {
+    public void displayRentedCars() {
         if (Storage.rentedCars.isEmpty())
             System.out.println("No Rented Cars!");
-        else 
-        {
+        else {
             System.out.println("Rented Car/s Data");
             int totalNumber = 1;
-            for (Rented rentedCar : Storage.rentedCars) 
-            {
+            for (Rented rentedCar : Storage.rentedCars) {
                 System.out.println("━ " + totalNumber + " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
                 System.out.println();
 
@@ -123,16 +90,13 @@ public class Employee extends Human
         }
     }
 
-    public void displaySoldCars()
-    {
-                if (Storage.rentedCars.isEmpty())
+    public void displaySoldCars() {
+        if (Storage.rentedCars.isEmpty())
             System.out.println("No Sold Cars!");
-        else 
-        {
+        else {
             System.out.println("Sold Car/s Data");
             int totalNumber = 1;
-            for (Sold soldCar : Storage.soldCars) 
-            {
+            for (Sold soldCar : Storage.soldCars) {
                 System.out.println("━ " + totalNumber + " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
                 System.out.println();
 
@@ -149,33 +113,11 @@ public class Employee extends Human
                 totalNumber++;
             }
         }
-
     }
 
-    public void addCar()
-    {
+    public void addCar() {
         boolean flag = true;
-        while (flag)
-        {
-            System.out.println("Disabled?");
-            System.out.println("Body Type: ");
-            System.out.println("Fuel Type: ");
-            System.out.println("Transmission Type: ");
-            System.out.println("Color: ");
-            System.out.println("Number of Seats: ");
-            System.out.println("");
-
-            // ?????????
-            System.out.println("Add another? [Y/N]");
-            System.out.println("1. Yes");
-            System.out.println("2. No");
-        }
-    }
-    public void removeCar()
-    {
-        boolean flag = true;
-        while (flag) 
-        {
+        while (flag) {
             System.out.println("Disabled?");
             System.out.println("Body Type: ");
             System.out.println("Fuel Type: ");
@@ -191,34 +133,44 @@ public class Employee extends Human
         }
     }
 
-    public String resetPassword(String newPassword) 
-    {
-    while (true) 
-        {
-            try 
-            {
-                System.out.println("Password");
-                newPassword = input.next();
+    public void removeCar() {
+        boolean flag = true;
+        while (flag) {
+            System.out.println("Disabled?");
+            System.out.println("Body Type: ");
+            System.out.println("Fuel Type: ");
+            System.out.println("Transmission Type: ");
+            System.out.println("Color: ");
+            System.out.println("Number of Seats: ");
+            System.out.println("");
 
-                if (newPassword == password)
-                    System.out.println("Invalid password.");
-                else
-                    return newPassword;
-            } 
-            catch (InputMismatchException exception) 
-            {
-                // ?????????????????????
-                System.out.println("Password ");
-                input.next();
-            }
+            // ?????????
+            System.out.println("Add another? [Y/N]");
+            System.out.println("01. Yes");
+            System.out.println("02. No");
         }
     }
 
-    // ??????????????
+    // TODO: add reset email/username/phone number
+    public String resetPassword() {
+        while (true) {
+            System.out.println("New Password: ");
+            String newPassword = ScannerUtil.takeString();
+            System.out.println("Confirm New Password: ");
+            String newPasswordCheck = ScannerUtil.takeString();
+
+            if (newPassword == getPassword())
+                System.out.println("THE NEW PASSWORD SHOULDN'T BE THE SAME AS THE OLD PASSWORD!");
+            else if (newPassword == newPasswordCheck)
+                return newPassword;
+        }
+    }
+
     @Override // Annotation
-    public void showData() 
-    {
-        System.out.println("Username " + getUsername());
-        System.out.println("Password " + getPassword());
+    public void showData() {
+        System.out.println("Email: " + getEmail());
+        System.out.println("Username: " + getUsername());
+        System.out.println("Password: " + getPassword());
+        System.out.println("Phone Number: " + getPhoneNumber());
     }
 }

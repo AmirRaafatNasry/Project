@@ -1,45 +1,61 @@
 package menu;
 
-import human.ScannerUtil;
-import menu.guides.CustomerMenu;
-import menu.guides.EmployeeMenu;
-import menu.guides.MenuController;
-
+import utility.OutputUtil;
+import utility.ScannerUtil;
 public class MainMenu
 {
-    public static void mainMenuStart()
+    public static void start()
     {
-        printRules();
+        printTermsAndConditions();
+        printInstructions();
         chooseUser();
-
-        switch (ScannerUtil.takeInteger(2,1)) 
-        {
-            case (1):
-                CustomerMenu.customerMenuStart();
-                break;
-            case (2):
-                EmployeeMenu.employeeMenuStart();
-                break;
-        }
-        mainMenuStart();
     }
 
-    public static void printRules() 
+    public static void printTermsAndConditions() 
     {
-        System.out.println("Welcome to \"????????????\" Agency!");
-        MenuController.delayMessage();
-        System.out.println("Choose by typing the number next to the option");
-        MenuController.delayMessage();
-        System.out.println("You cannot go back to the main menu");
-        MenuController.delayMessage();
-        System.out.println("text");
-        MenuController.delayMessage();
-        System.out.println("text");
-        MenuController.delayMessage();
-        System.out.println("text");
-        MenuController.delayMessage();
+        System.out.println("--------------------------------------------------");
+        System.out.println("\"Quality is Job One.\"");
+        System.out.println("- Canadian International College (CIC) Car Agency");
+        System.out.println("--------------------------------------------------");
+        System.out.println("Terms & Condition");
 
-        MenuController.clearScreen();
+        System.out.println("01. ");
+        System.out.println("    A) ");
+        System.out.println("    B) ");
+        System.out.println("    C) ");
+
+        System.out.println("02. ");
+
+        System.out.println("03. ");
+        System.out.println("    A) ");
+        System.out.println("    B) ");
+
+        System.out.println("04. ");
+
+        System.out.println("05 ");
+        System.out.println("    A) ");
+        System.out.println("    B) ");
+        System.out.println("    C) ");
+        System.out.println("    D) ");
+        System.out.println("---------------------------------------------------");
+        System.out.println();
+
+        ScannerUtil.takeString("Do you agree to our Terms & Conditions? [Y/N]", "Expected Y", "Y");
+        OutputUtil.clearScreen();
+    }
+    
+    public static void printInstructions() 
+    {
+        System.out.println("---------------------------------------------------");
+        System.out.println("01. ");
+        System.out.println("02. ");
+        System.out.println("03. ");
+        System.out.println("04. ");
+        System.out.println("---------------------------------------------------");
+        System.out.println();
+
+        ScannerUtil.takeString("Proceed? [Y/N]", "Expected Y", "Y");
+        OutputUtil.clearScreen();
     }
 
     public static void chooseUser()
@@ -47,6 +63,16 @@ public class MainMenu
         System.out.println("1. Customer");
         System.out.println("2. Employee");
 
-        MenuController.clearScreen();
+        switch (ScannerUtil.takeInteger(2, 1)) 
+        {
+            case (1):
+                OutputUtil.clearScreen();
+                CustomerMenu.start();
+                break;
+            case (2):
+                OutputUtil.clearScreen();
+                EmployeeMenu.start();
+                break;
+        }
     }
 }

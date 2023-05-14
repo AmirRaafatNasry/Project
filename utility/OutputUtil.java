@@ -1,6 +1,6 @@
-package menu.guides;
+package utility;
 
-public class MenuController
+public class OutputUtil 
 {
     // Methods
     public static void clearScreen() 

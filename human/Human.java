@@ -6,17 +6,22 @@ public class Human
     private String email;
     private String username;
     private String password;
+    private String phoneNumber;
 
-    private int phoneNumber;
     private int nationalIdentificationNumber;
 
     // Constructor for Employee
-    public Human()
+    public Human(String email, String username, String password, String phoneNumber)
     {
+        this.email = email;
+        this.username = username;
+        this.password = password;
+
+        this.phoneNumber = phoneNumber;
     }
 
     // Constructor for Customer
-    public Human(String email, String username, String password, int phoneNumber, int nationalIdentificationNumber)
+    public Human(String email, String username, String password, String phoneNumber, int nationalIdentificationNumber)
     {
         this.email = email;
         this.username = username;
@@ -54,11 +59,11 @@ public class Human
         this.password = password;
     }
 
-    public int getPhoneNumber() 
+    public String getPhoneNumber() 
     {
         return phoneNumber;
     }
-    public void setPhoneNumber(int phoneNumber) 
+    public void setPhoneNumber(String phoneNumber) 
     {
         this.phoneNumber = phoneNumber;
     }
@@ -76,7 +81,5 @@ public class Human
     // Methods
     public void showData() 
     {
-        System.out.println("Username " + getUsername());
-        System.out.println("Password " + getPassword());
     }
 }
