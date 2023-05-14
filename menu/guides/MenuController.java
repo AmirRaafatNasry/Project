@@ -1,7 +1,5 @@
 package menu.guides;
 
-import java.util.Scanner;
-
 public class MenuController
 {
     // Methods

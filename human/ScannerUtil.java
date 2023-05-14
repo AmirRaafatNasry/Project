@@ -11,7 +11,8 @@ public class ScannerUtil
     {
         while (true)
         {
-            try {
+            try 
+            {
                 System.out.println(label);
                 String text = input.next();
 
