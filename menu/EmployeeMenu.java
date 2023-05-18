@@ -18,9 +18,7 @@ public class EmployeeMenu
     {
         ScannerUtil.takeString("Username", "Username is an English word.", Storage.admin.getUsername());
         OutputUtil.clearScreen();
-
         ScannerUtil.takeString("Password", "Password is an English word with numbers.", Storage.admin.getPassword());
-        OutputUtil.clearScreen(); // no need
     }
 
     public static void displayOptions() 

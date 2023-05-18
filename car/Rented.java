@@ -4,7 +4,6 @@ public class Rented extends Car
 {
     // Attributes
     private int rentalStartDate;
-    private int rentalTime;
     private int rentalEndDate;
 
     // Constructor
@@ -12,7 +11,6 @@ public class Rented extends Car
     {
         super(disabled, bodyType, fuelType, transmissionType, color, numberOfSeats);
         this.rentalStartDate = rentalStartDate;
-        this.rentalTime = rentalTime;
         this.rentalEndDate = rentalEndDate;
     }
 
@@ -26,15 +24,6 @@ public class Rented extends Car
         this.rentalStartDate = rentalStartDate;
     }
 
-    public int getRentalTime() 
-    {
-        return rentalTime;
-    }
-    public void setRentalTime(int rentalTime) 
-    {
-        this.rentalTime = rentalTime;
-    }
-
     public int getRentalEndDate() 
     {
         return rentalEndDate;
@@ -46,7 +35,8 @@ public class Rented extends Car
 
 
     // Methods
-    public void calculateRentalPrice()
+    public void takeRentalTime()
     {
+        
     }
 }

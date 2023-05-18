@@ -8,16 +8,33 @@ import utility.ScannerUtil;
 
 public class Employee extends Human 
 {
+    // Attributes
+    private String department;
+
+    // Constructor
     public Employee(String email, String username, String password, String phoneNumber) 
     {
         super(email, username, password, phoneNumber);
+        this.department = department;
     }
+
+    // Getters (Accessors) & Setters (Mutators)
+    public String getDepartment() 
+    {
+        return department;
+    }
+    public void setDepartment(String department) 
+    {
+        this.department = department;
+    }
+
 
     public static void displayCustomers() 
     {
         if (Storage.customers.isEmpty())
             System.out.println("No Customers!");
-        else {
+        else 
+        {
             System.out.println("Customer/s Data");
             int totalNumber = 1;
             for (Customer customer : Storage.customers) {
@@ -215,5 +232,6 @@ public class Employee extends Human
         System.out.println("Username: " + getUsername());
         System.out.println("Password: " + getPassword());
         System.out.println("Phone Number: " + getPhoneNumber());
+        System.out.println("Department: " + getDepartment());
     }
 }

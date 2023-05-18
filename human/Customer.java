@@ -10,7 +10,8 @@ public class Customer extends Human
 
     // Methods
     @Override // Annotation
-    public void showData() {
+    public void showData() 
+    {
         System.out.println("Username: " + getUsername());
         System.out.println("Password: " + getPassword());
     }

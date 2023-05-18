@@ -10,6 +10,17 @@ public class Car
     private String color;
     private int numberOfSeats;
 
+    // Constructor
+    public Car(boolean disabled, String bodyType, String fuelType, String transmissionType, String color,
+            int numberOfSeats) {
+        this.disabled = disabled;
+        this.bodyType = bodyType;
+        this.fuelType = fuelType;
+        this.transmissionType = transmissionType;
+        this.color = color;
+        this.numberOfSeats = numberOfSeats;
+    }
+
     // Getters (Accessors) & Setters (Mutators)
     public boolean isDisabled() 
     {
@@ -62,17 +73,6 @@ public class Car
     }
     public void setNumberOfSeats(int numberOfSeats) 
     {
-        this.numberOfSeats = numberOfSeats;
-    }
-
-    // Constructor
-    public Car(boolean disabled, String bodyType, String fuelType, String transmissionType, String color, int numberOfSeats) 
-    {
-        this.disabled = disabled;
-        this.bodyType = bodyType;
-        this.fuelType = fuelType;
-        this.transmissionType = transmissionType;
-        this.color = color;
         this.numberOfSeats = numberOfSeats;
     }
 

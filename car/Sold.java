@@ -21,6 +21,4 @@ public class Sold extends Car
     {
         this.sellDate = sellDate;
     }
-
-    // Methods
 }
