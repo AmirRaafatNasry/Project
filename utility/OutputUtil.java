@@ -2,7 +2,6 @@ package utility;
 
 public class OutputUtil 
 {
-    // Methods
     public static void clearScreen() 
     {
         // \033: It represents the ASCII escape character.

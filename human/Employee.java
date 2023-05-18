@@ -6,14 +6,15 @@ import car.Sold;
 import storage.Storage;
 import utility.ScannerUtil;
 
-public class Employee extends Human {
-    // Constructor
-    public Employee(String email, String username, String password, String phoneNumber) {
+public class Employee extends Human 
+{
+    public Employee(String email, String username, String password, String phoneNumber) 
+    {
         super(email, username, password, phoneNumber);
     }
 
-    // Methods
-    public void displayCustomers() {
+    public static void displayCustomers() 
+    {
         if (Storage.customers.isEmpty())
             System.out.println("No Customers!");
         else {
@@ -40,13 +41,16 @@ public class Employee extends Human {
     // public Car(boolean disabled, String bodyType, String fuelType, String
     // transmissionType, String color, int numberOfSeats)
 
-    public void displayAvailableCars() {
+    public static void displayAvailableCars() 
+    {
         if (Storage.availableCars.isEmpty())
             System.out.println("No Available Cars!");
-        else {
+        else 
+        {
             System.out.println("Available Car/s Data");
             int totalNumber = 1;
-            for (Car availableCar : Storage.availableCars) {
+            for (Car availableCar : Storage.availableCars) 
+            {
                 System.out.println("━ " + totalNumber + " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
                 System.out.println();
 
@@ -65,10 +69,12 @@ public class Employee extends Human {
         }
     }
 
-    public void displayRentedCars() {
+    public static void displayRentedCars() 
+    {
         if (Storage.rentedCars.isEmpty())
             System.out.println("No Rented Cars!");
-        else {
+        else 
+        {
             System.out.println("Rented Car/s Data");
             int totalNumber = 1;
             for (Rented rentedCar : Storage.rentedCars) {
@@ -90,10 +96,12 @@ public class Employee extends Human {
         }
     }
 
-    public void displaySoldCars() {
+    public void displaySoldCars()
+    {
         if (Storage.rentedCars.isEmpty())
             System.out.println("No Sold Cars!");
-        else {
+        else 
+        {
             System.out.println("Sold Car/s Data");
             int totalNumber = 1;
             for (Sold soldCar : Storage.soldCars) {
@@ -115,9 +123,11 @@ public class Employee extends Human {
         }
     }
 
-    public void addCar() {
+    public static void addCar() 
+    {
         boolean flag = true;
-        while (flag) {
+        while (flag) 
+        {
             System.out.println("Disabled?");
             System.out.println("Body Type: ");
             System.out.println("Fuel Type: ");
@@ -126,40 +136,72 @@ public class Employee extends Human {
             System.out.println("Number of Seats: ");
             System.out.println("");
 
-            // ?????????
-            System.out.println("Add another? [Y/N]");
-            System.out.println("1. Yes");
-            System.out.println("2. No");
-        }
-    }
-
-    public void removeCar() {
-        boolean flag = true;
-        while (flag) {
-            System.out.println("Disabled?");
-            System.out.println("Body Type: ");
-            System.out.println("Fuel Type: ");
-            System.out.println("Transmission Type: ");
-            System.out.println("Color: ");
-            System.out.println("Number of Seats: ");
-            System.out.println("");
-
-            // ?????????
-            System.out.println("Add another? [Y/N]");
+            System.out.println("Are you sure about the data you entered?");
             System.out.println("01. Yes");
             System.out.println("02. No");
+            int choice = ScannerUtil.takeInteger(1, 2);
+            if (choice == 2)
+                continue;
+
+            System.out.println("Add another?");
+            System.out.println("01. Yes");
+            System.out.println("02. No");
+            choice = ScannerUtil.takeInteger(1, 2);
+            if (choice == 2)
+                break;
         }
     }
 
-    // TODO: add reset email/username/phone number
-    public String resetPassword() {
-        while (true) {
+
+    public static void removeCar() 
+    {
+        while (true) 
+        {
+            System.out.println("Disabled?");
+            System.out.println("Body Type: ");
+            System.out.println("Fuel Type: ");
+            System.out.println("Transmission Type: ");
+            System.out.println("Color: ");
+            System.out.println("Number of Seats: ");
+            System.out.println("");
+
+            System.out.println("Are you sure about the data you entered?");
+            System.out.println("01. Yes");
+            System.out.println("02. No");
+            int choice = ScannerUtil.takeInteger(1, 2);
+            if (choice == 2)
+                continue;
+
+            System.out.println("Remove another?");
+            System.out.println("01. Yes");
+            System.out.println("02. No");
+            choice = ScannerUtil.takeInteger(1,2);
+            if (choice == 2)
+                break;
+        }
+    }
+
+    public static void addEmployee()
+    {
+        
+    }
+
+    public static void removeEmployee()
+    {
+
+    }
+
+    // TODO add reset email/username/phone number
+    public String resetPassword() 
+    {
+        while (true) 
+        {
             System.out.println("New Password: ");
             String newPassword = ScannerUtil.takeString();
             System.out.println("Confirm New Password: ");
             String newPasswordCheck = ScannerUtil.takeString();
 
-            if (newPassword == getPassword())
+            if (newPassword == Storage.admin.getPassword())
                 System.out.println("THE NEW PASSWORD SHOULDN'T BE THE SAME AS THE OLD PASSWORD!");
             else if (newPassword == newPasswordCheck)
                 return newPassword;
@@ -167,7 +209,8 @@ public class Employee extends Human {
     }
 
     @Override // Annotation
-    public void showData() {
+    public void showData() 
+    {
         System.out.println("Email: " + getEmail());
         System.out.println("Username: " + getUsername());
         System.out.println("Password: " + getPassword());

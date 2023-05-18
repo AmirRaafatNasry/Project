@@ -1,5 +1,6 @@
 package menu;
 
+import human.Employee;
 import storage.Storage;
 import utility.OutputUtil;
 import utility.ScannerUtil;
@@ -8,17 +9,18 @@ public class EmployeeMenu
 {
     public static void start() 
     {
+        OutputUtil.clearScreen();
         login();
         displayOptions();
     }
 
     public static void login() 
     {
-        ScannerUtil.takeString("Username", "Username is an English word.", "Admin");
+        ScannerUtil.takeString("Username", "Username is an English word.", Storage.admin.getUsername());
         OutputUtil.clearScreen();
 
-        ScannerUtil.takeString("Password", "Password is an English word with numbers.", "Admin01");
-        OutputUtil.clearScreen();
+        ScannerUtil.takeString("Password", "Password is an English word with numbers.", Storage.admin.getPassword());
+        OutputUtil.clearScreen(); // no need
     }
 
     public static void displayOptions() 
@@ -29,78 +31,61 @@ public class EmployeeMenu
         System.out.println("03. Add/Remove Employee");
         System.out.println("04. Reset Password");
 
-        // break?
-        switch (ScannerUtil.takeInteger(4, 1))
+        switch (ScannerUtil.takeInteger(1, 4))
         {
             case(1):
-                OutputUtil.clearScreen();
                 displayOptionOne();
-                break;
             case(2):
-                OutputUtil.clearScreen();
                 displayOptionTwo();
-                break;
             case(3):
-                OutputUtil.clearScreen();
                 displayOptionThree();
-                break;
             case(4):
-                OutputUtil.clearScreen();
                 displayOptionFour();
-                break;
         }
     }
 
     public static void displayOptionOne() 
     {
+        OutputUtil.clearScreen();
         System.out.println("01. Display Customers");
-        System.out.println("02. Display Rented Cars");
-        System.out.println("03. Display Sold Cars");
+        System.out.println("02. Display Available Cars");
+        System.out.println("03. Display Rented Cars");
+        System.out.println("04. Display Sold Cars");
         System.out.println();
         System.out.println("00. Back");
 
-        switch (ScannerUtil.takeInteger(3, 0))
+        switch (ScannerUtil.takeInteger(0, 4))
         {
             case(1):
-                OutputUtil.clearScreen();
-                Employee.displayCustomer();
-                break;
+                Employee.displayCustomers();
             case(2):
-                OutputUtil.clearScreen();
-                Employee.displayRe();
-                break;
+                Employee.displayAvailableCars();
             case(3):
-                OutputUtil.clearScreen();
+                Employee.displayRentedCars();
+            case(4):
                 displayOptionThree();
-                break;
             case(0):
-                OutputUtil.clearScreen();
                 displayOptions();
-                break;
         }
-
-        OutputUtil.clearScreen();
     }
 
     public static void displayOptionTwo() 
     {
+        OutputUtil.clearScreen();
         System.out.println("01. Add Car");
         System.out.println("02. Remove Car");
         System.out.println();
         System.out.println("00. Back");
 
-        switch (ScannerUtil.takeInteger(2, 0))
+        switch (ScannerUtil.takeInteger(0, 2))
         {
             case(1):
-                OutputUtil.clearScreen();
-                Employee.displayCustomer();
+                Employee.addCar();
                 break;
             case(2):
-                OutputUtil.clearScreen();
-                Employee.displayRe();
+                Employee.removeCar();
                 break;
             case(0):
-                OutputUtil.clearScreen();
                 displayOptions();
                 break;
         }
@@ -108,23 +93,21 @@ public class EmployeeMenu
 
     public static void displayOptionThree() 
     {
+        OutputUtil.clearScreen();
         System.out.println("01. Add Employee");
         System.out.println("02. Remove Employee");
         System.out.println();
         System.out.println("00. Back");
 
-        switch (ScannerUtil.takeInteger(2, 0))
+        switch (ScannerUtil.takeInteger(0, 2))
         {
             case(1):
-                OutputUtil.clearScreen();
-                Employee.displayCustomer();
+                Employee.addEmployee();
                 break;
             case(2):
-                OutputUtil.clearScreen();
-                Employee.displayRe();
+                Employee.removeCar();
                 break;
             case(0):
-                OutputUtil.clearScreen();
                 displayOptions();
                 break;
         }
@@ -132,6 +115,7 @@ public class EmployeeMenu
 
     public static void displayOptionFour() 
     {
+        OutputUtil.clearScreen();
         Storage.admin.resetPassword();
         Storage.admin.showData();
     }

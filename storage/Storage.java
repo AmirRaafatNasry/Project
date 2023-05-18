@@ -15,7 +15,8 @@ public class Storage
     
     public static ArrayList<Customer> customers; 
     public static ArrayList<Employee> employees; 
-    public static ArrayList<Rented> rentedCars; 
+
     public static ArrayList<Car> availableCars; 
+    public static ArrayList<Rented> rentedCars; 
     public static ArrayList<Sold> soldCars; 
 }
