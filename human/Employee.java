@@ -28,7 +28,7 @@ public class Employee extends Human
         this.department = department;
     }
 
-
+    // Methods
     public static void displayCustomers() 
     {
         if (Storage.customers.isEmpty())
@@ -125,12 +125,12 @@ public class Employee extends Human
                 System.out.println("━ " + totalNumber + " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
                 System.out.println();
 
-                System.out.println("1. Car for Disabled People: " + soldCar.isDisabled());
-                System.out.println("2. Body Type: " + soldCar.getBodyType());
-                System.out.println("3. Fuel Type: " + soldCar.getFuelType());
-                System.out.println("4. Transmission Type : " + soldCar.getTransmissionType());
-                System.out.println("5. Color: " + soldCar.getColor());
-                System.out.println("6. Number of Seats : " + soldCar.getNumberOfSeats());
+                System.out.println("01. Accessibility: " + soldCar.getAccessibility());
+                System.out.println("02. Body Type: " + soldCar.getBodyType());
+                System.out.println("03. Fuel Type: " + soldCar.getFuelType());
+                System.out.println("04. Transmission Type : " + soldCar.getTransmissionType());
+                System.out.println("05. Color: " + soldCar.getColor());
+                System.out.println("06. Number of Seats : " + soldCar.getNumberOfSeats());
 
                 System.out.println();
                 System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
@@ -145,13 +145,13 @@ public class Employee extends Human
         boolean flag = true;
         while (flag) 
         {
-            System.out.println("Disabled?");
+            System.out.println("Accessibility: ");
             System.out.println("Body Type: ");
             System.out.println("Fuel Type: ");
             System.out.println("Transmission Type: ");
             System.out.println("Color: ");
             System.out.println("Number of Seats: ");
-            System.out.println("");
+            System.out.println();
 
             System.out.println("Are you sure about the data you entered?");
             System.out.println("01. Yes");
@@ -180,7 +180,7 @@ public class Employee extends Human
             System.out.println("Transmission Type: ");
             System.out.println("Color: ");
             System.out.println("Number of Seats: ");
-            System.out.println("");
+            System.out.println();
 
             System.out.println("Are you sure about the data you entered?");
             System.out.println("01. Yes");
@@ -213,10 +213,8 @@ public class Employee extends Human
     {
         while (true) 
         {
-            System.out.println("New Password: ");
-            String newPassword = ScannerUtil.takeString();
-            System.out.println("Confirm New Password: ");
-            String newPasswordCheck = ScannerUtil.takeString();
+            String newPassword = ScannerUtil.takeString("New Password: ");
+            String newPasswordCheck = ScannerUtil.takeString("Confirm New Password: ");
 
             if (newPassword == Storage.admin.getPassword())
                 System.out.println("THE NEW PASSWORD SHOULDN'T BE THE SAME AS THE OLD PASSWORD!");

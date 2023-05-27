@@ -6,9 +6,9 @@ public class Sold extends Car
     private int sellDate;
 
     // Constructor
-    public Sold(boolean disabled, String bodyType, String fuelType, String transmissionType, String color, int numberOfSeats, int sellDate) 
+    public Sold(String accessibility, String bodyType, String fuelType, String transmissionType, String color, int numberOfSeats, int sellDate) 
     {
-        super(disabled, bodyType, fuelType, transmissionType, color, numberOfSeats);
+        super(accessibility, bodyType, fuelType, transmissionType, color, numberOfSeats);
         this.sellDate = sellDate;
     }
 

@@ -20,8 +20,9 @@ public class ScannerUtil
         }
     }
 
-    public static String takeString() 
+    public static String takeString(String message) 
     {
+        System.out.println(message);
         String text = input.nextLine();
         return text;
     }

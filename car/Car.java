@@ -3,7 +3,7 @@ package car;
 public class Car 
 {
     // Attributes
-    private boolean disabled;
+    private String accessibility;
     private String bodyType;
     private String fuelType;
     private String transmissionType;
@@ -11,9 +11,9 @@ public class Car
     private int numberOfSeats;
 
     // Constructor
-    public Car(boolean disabled, String bodyType, String fuelType, String transmissionType, String color,
-            int numberOfSeats) {
-        this.disabled = disabled;
+    public Car(String accessibility, String bodyType, String fuelType, String transmissionType, String color, int numberOfSeats) 
+    {
+        this.accessibility = accessibility;
         this.bodyType = bodyType;
         this.fuelType = fuelType;
         this.transmissionType = transmissionType;
@@ -22,13 +22,13 @@ public class Car
     }
 
     // Getters (Accessors) & Setters (Mutators)
-    public boolean isDisabled() 
+    public String getAccessibility() 
     {
-        return disabled;
+        return accessibility;
     }
-    public void setDisabled(boolean disabled) 
+    public void setAccessibility(String accessibility) 
     {
-        this.disabled = disabled;
+        this.accessibility = accessibility;
     }
 
     public String getBodyType() 
@@ -77,8 +77,4 @@ public class Car
     }
 
     // Methods
-    public void calculatePrice(boolean disabled, String bodyType, String fuelType, String transimssionType, String Color , int numberOfSeats)
-    {
-
-    }
 }

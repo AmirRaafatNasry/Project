@@ -7,4 +7,4 @@ public class Main
     }
 }
 
-// coded with <3 by Amir.
+// coded with <3 by Amir & Sarah.

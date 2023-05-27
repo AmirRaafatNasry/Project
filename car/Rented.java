@@ -7,9 +7,9 @@ public class Rented extends Car
     private int rentalEndDate;
 
     // Constructor
-    public Rented(boolean disabled, String bodyType, String fuelType, String transmissionType, String color, int numberOfSeats, int rentalStartDate, int rentalTime, int rentalEndDate) 
+    public Rented(String accessibility, String bodyType, String fuelType, String transmissionType, String color, int numberOfSeats, int rentalStartDate, int rentalEndDate) 
     {
-        super(disabled, bodyType, fuelType, transmissionType, color, numberOfSeats);
+        super(accessibility, bodyType, fuelType, transmissionType, color, numberOfSeats);
         this.rentalStartDate = rentalStartDate;
         this.rentalEndDate = rentalEndDate;
     }
@@ -37,6 +37,6 @@ public class Rented extends Car
     // Methods
     public void takeRentalTime()
     {
-        
+
     }
 }
