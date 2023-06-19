@@ -9,13 +9,13 @@ public class EmployeeMenu
 {
     public static void start() 
     {
-        OutputUtil.clearScreen();
         login();
         displayOptions();
     }
 
     public static void login() 
     {
+        OutputUtil.clearScreen();
         ScannerUtil.takeString("Username", "Username is an English word.", Storage.admin.getUsername());
         OutputUtil.clearScreen();
         ScannerUtil.takeString("Password", "Password is an English word with numbers.", Storage.admin.getPassword());
@@ -33,12 +33,16 @@ public class EmployeeMenu
         {
             case(1):
                 displayOptionOne();
+                break;
             case(2):
                 displayOptionTwo();
+                break;
             case(3):
                 displayOptionThree();
+                break;
             case(4):
                 displayOptionFour();
+                break;
         }
     }
 
@@ -56,14 +60,19 @@ public class EmployeeMenu
         {
             case(1):
                 Employee.displayCustomers();
+                break;
             case(2):
                 Employee.displayAvailableCars();
+                break;
             case(3):
                 Employee.displayRentedCars();
+                break;
             case(4):
                 displayOptionThree();
+                break;
             case(0):
                 displayOptions();
+                break;
         }
     }
 

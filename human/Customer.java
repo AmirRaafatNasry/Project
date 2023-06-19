@@ -15,4 +15,6 @@ public class Customer extends Human
         System.out.println("Username: " + getUsername());
         System.out.println("Password: " + getPassword());
     }
+
+    
 }

@@ -159,6 +159,10 @@ public class Employee extends Human
             int choice = ScannerUtil.takeInteger(1, 2);
             if (choice == 2)
                 continue;
+            
+            System.out.println("01. Rentable Car");
+            System.out.println("02. Sellable Car");
+            // TODO finish this
 
             System.out.println("Add another?");
             System.out.println("01. Yes");
@@ -188,6 +192,8 @@ public class Employee extends Human
             int choice = ScannerUtil.takeInteger(1, 2);
             if (choice == 2)
                 continue;
+
+            // TODO search for the car and remove it
 
             System.out.println("Remove another?");
             System.out.println("01. Yes");
